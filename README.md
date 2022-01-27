@@ -22,7 +22,7 @@
 
 6. Saber que puertos pueden estar habiertos y cuales son los que utiliza
 
-## Busqueda de vulneravilidades 
+## Busqueda de vulnerabilidades 
 
 Una vez analizada la pagina web y con la informacion de sus servicios procedemos a buscar vulnerabilidades.
 
